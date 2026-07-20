@@ -16,3 +16,21 @@ function authToken(req, res, next) {
         }
     }
 }
+
+// if the user does not possess a Student role for a route they are accessing, they will be denied with an error message
+
+function requireStudent(req, res, next) {
+    if (req.user.role !== "student") {
+        return res.status(403).json({ message: "---STUDENT ACCESS REQUIRED TO REACH THIS RESOURCE---" });
+    }
+    next();
+}
+
+//same as above except for Teacher role. 
+
+function requireTeacher(req, res, next) {
+    if (req.user.role !== "teacher") {
+        return res.status(403).json({ message: "---TEACHER ACCESS REQUIRED TO REACH THIS RESOURCE---" });
+    }
+    next();
+}
