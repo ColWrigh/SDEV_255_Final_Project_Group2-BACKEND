@@ -34,3 +34,9 @@ function requireTeacher(req, res, next) {
     }
     next();
 }
+
+module.exports = {
+    authToken,
+    requireStudent,
+    requireTeacher,
+}
