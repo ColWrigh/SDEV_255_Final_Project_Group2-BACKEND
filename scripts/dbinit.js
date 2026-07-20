@@ -10,3 +10,5 @@ db.exec(`
 `);
 
 //backticks above allowing many multi-line strings to be used at once 
+
+console.log('Database initialized.');
