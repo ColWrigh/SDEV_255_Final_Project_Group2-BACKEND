@@ -1,3 +1,5 @@
 /node_modules
 /database/college.db
 .env
+/.postman
+/postman

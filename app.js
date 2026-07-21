@@ -1,3 +1,5 @@
+require('dotenv').config(); //requiring dotenv to be used for variables in the .env file
+
 // database constants
 const enrollmentDb = require("./database/enrollment");
 const courseDb = require("./database/courses");
@@ -9,10 +11,13 @@ const courseRoutes = require('./routes/courses');
 
 const express = require('express');
 const app = express();
-app.use(express.json());
-app.use(cors()); //allows requests from front-end to back, and back to front.
+const cors = require('cors');
 const port = 3000;
 
+app.use(express.json());
+app.use(cors()); //allows requests from front-end to back, and back to front.
+app.use('/auth', authRoutes);
+app.use('/courses', courseRoutes);
 
 require('./database/schema');
 require('./database/seed');                 // Only runs if the database is not already established on your system
