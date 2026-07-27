@@ -12,7 +12,7 @@ router.post('/login', async (req, res) => {
     if (!user) {
         return res.status(401).json({ message: "---INVALID USERNAME OR PASSWORD---" });
     }
-    const match = await bcrypt.compare(password, user.password);
+    const match = password === user.password;     //original line 'const match = await bcrypt.compare(password, user.password);', switching to plaintext for ease of use for the sake of the project.
     if (!match) {
         return res.status(401).json({ message: "---INVALID CREDENTIALS---" });
     }
