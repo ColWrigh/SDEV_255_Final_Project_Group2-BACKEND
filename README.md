@@ -52,6 +52,7 @@ JWT_SECRET=your-secret-key
 ```
 
 ## Running the Server
+Note: the project is hosted live on Render, self hosting for dev purposes only.
 
 Start the application:
 
@@ -145,7 +146,3 @@ On first startup, seed data includes:
 - `jsonwebtoken`
 - `better-sqlite3`
 - `bcryptjs`
-
-## License
-
-This project does not include a license file. Add one if you wish to define reuse permissions.
